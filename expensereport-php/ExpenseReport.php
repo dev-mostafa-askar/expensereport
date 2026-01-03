@@ -21,11 +21,11 @@ class ExpenseReport
 {
     function print_report($expenses) 
     {
-        $mealExpenses = 0;
         $total = 0;
         $date = date("Y-m-d h:i:sa");
         print("Expense Report {$date}\n");
-
+        
+        $mealExpenses = 0;
         foreach ($expenses as $expense) {
             $mealExpenses += $this->getMealExpenses($expense);
         }
