@@ -19,7 +19,7 @@ class Expense
 
 class ExpensesData 
 {
-    public function __construct(public $mealExpense, public $total) {}
+    public function __construct(public $mealExpense, public $total, public array $expensesData) {}
 }
 
 class ExpenseData 
@@ -51,7 +51,7 @@ class ExpenseReport
                 $this->getMealOverExpensesMarker($expense)
             );
         }
-        return new ExpensesData($this->getTotalMealExpenses($expenses), $this->getTotal($expenses));
+        return new ExpensesData($mealExpenses, $total, $expensesItems);
     }
     function print_report($expenses) 
     {
