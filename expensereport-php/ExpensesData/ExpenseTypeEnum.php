@@ -1,6 +1,6 @@
 <?php 
 
-abstract class ExpenseType 
+abstract class ExpenseTypeEnum
 {
     const DINNER = 1;
     const BREAKFAST = 2;
