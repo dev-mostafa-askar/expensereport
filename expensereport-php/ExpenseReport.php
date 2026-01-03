@@ -65,24 +65,6 @@ class ExpenseReport
         print("Total Expenses: " . $expensesData->total . "\n");
     }
 
-    private function getTotalMealExpenses($expenses)
-    {
-        $mealExpenses = 0;
-        foreach ($expenses as $expense) {
-            $mealExpenses += $this->getMealExpenses($expense);
-        }
-        return $mealExpenses;
-    }
-
-    private function getTotal($expenses)
-    {
-        $total = 0;
-        foreach ($expenses as $expense) {
-            $total += $expense->amount;
-        }
-        return $total;
-    }
-
     private function getExpenseName($expenseType)
     {
         switch ($expenseType) {
