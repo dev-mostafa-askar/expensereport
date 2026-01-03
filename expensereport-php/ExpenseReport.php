@@ -27,7 +27,7 @@ class ExpenseReport
         print("Expense Report {$date}\n");
         foreach ($expenses as $expense) {
             $mealExpenses += $this->getMealExpenses($expense);        
-            $mealOverExpensesMarker = $expense->type == ExpenseType::DINNER && $expense->amount > 5000 || $expense->type == ExpenseType::BREAKFAST && $expense->amount > 1000 ? "X" : " ";
+            $mealOverExpensesMarker = $this->getMealOverExpensesMarker($expense);
             print($this->getExpenseName($expense->type) . "\t" . $expense->amount . "\t" . $mealOverExpensesMarker . "\n");
             $total += $expense->amount;
         }
