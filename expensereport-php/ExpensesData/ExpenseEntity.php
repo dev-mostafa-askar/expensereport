@@ -1,6 +1,6 @@
 <?php 
 
-class Expense
+class ExpenseEntity
 {
     public $type;
     public $amount;
