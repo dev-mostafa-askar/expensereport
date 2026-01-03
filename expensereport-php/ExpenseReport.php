@@ -1,5 +1,6 @@
 <?php
 
+require_once 'ExpensesData/ExpenseTransformer.php';
 abstract class ExpenseType 
 {
     const DINNER = 1;
@@ -59,7 +60,7 @@ class ExpenseReport
     }
     function print_report($expenses) 
     {
-        $expensesData = new ExpenseTransformer()->transform($expenses);
+        $expensesData = (new ExpenseTransformer())->transform($expenses);
         $this->printReportInConsle($expensesData);
     }
 

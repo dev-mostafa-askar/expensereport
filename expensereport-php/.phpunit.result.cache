@@ -1,1 +1,1 @@
-{"version":2,"defects":{"ExpenseReportTest::testPrintReport":5},"times":{"ExpenseReportTest::testExample":0.002,"ExpenseReportTest::testPrintReport":0}}
+{"version":2,"defects":{"ExpenseReportTest::testPrintReport":5},"times":{"ExpenseReportTest::testExample":0.002,"ExpenseReportTest::testPrintReport":0.003}}
