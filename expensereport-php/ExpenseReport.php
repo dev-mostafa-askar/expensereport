@@ -17,9 +17,14 @@ class Expense
     }
 }
 
-class ExpenseData 
+class ExpensesData 
 {
     public function __construct(public $mealExpense, public $total) {}
+}
+
+class ExpenseData 
+{
+
 }
 
 class ExpenseReport 
@@ -27,7 +32,7 @@ class ExpenseReport
 
     function getReportData($expenses)
     {
-        $expensesData = new ExpenseData($this->getTotalMealExpenses($expenses), $this->getTotal($expenses));
+        $expensesData = new ExpensesData($this->getTotalMealExpenses($expenses), $this->getTotal($expenses));
         return $expensesData;
     }
     function print_report($expenses) 
