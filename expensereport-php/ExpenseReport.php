@@ -26,10 +26,7 @@ class ExpenseReport
         $date = date("Y-m-d h:i:sa");
         print("Expense Report {$date}\n");
         foreach ($expenses as $expense) {
-            if ($expense->type == ExpenseType::DINNER || $expense->type == ExpenseType::BREAKFAST) {
-                $mealExpenses += $expense->amount;
-            }
-        
+            $mealExpenses += $this->getMealExpenses($expense);        
             $mealOverExpensesMarker = $expense->type == ExpenseType::DINNER && $expense->amount > 5000 || $expense->type == ExpenseType::BREAKFAST && $expense->amount > 1000 ? "X" : " ";
             print($this->getExpenseName($expense->type) . "\t" . $expense->amount . "\t" . $mealOverExpensesMarker . "\n");
             $total += $expense->amount;
@@ -38,12 +35,19 @@ class ExpenseReport
         print("Total Expenses: " . $total . "\n");
     }
 
-    public function getExpenseName($expenseType)
+    private function getExpenseName($expenseType)
     {
         switch ($expenseType) {
             case ExpenseType::DINNER: return "Dinner";
             case ExpenseType::BREAKFAST: return "Breakfast";;
             case ExpenseType::CAR_RENTAL: return "Car Rental"; ;
+        }
+    }
+
+    private function getMealExpenses($expense)
+    {
+        if ($expense->type == ExpenseType::DINNER || $expense->type == ExpenseType::BREAKFAST) {
+            return $expense->amount;
         }
     }
 }
