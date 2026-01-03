@@ -14,9 +14,9 @@ class ExpenseReportTest extends TestCase
     public function testPrintReport(): void
     {
         $expenses = [
-            (new Expense(ExpenseType::DINNER, 5001)),
-            (new Expense(ExpenseType::BREAKFAST, 1000)),
-            (new Expense(ExpenseType::CAR_RENTAL, 4000)),
+            (new ExpenseEntity(ExpenseTypeEnum::DINNER, 5001)),
+            (new ExpenseEntity(ExpenseTypeEnum::BREAKFAST, 1000)),
+            (new ExpenseEntity(ExpenseTypeEnum::CAR_RENTAL, 4000)),
         ];
 
         $expensesReport = new ExpenseReport();
