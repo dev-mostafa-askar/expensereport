@@ -24,10 +24,7 @@ class ExpenseReport
         $date = date("Y-m-d h:i:sa");
         print("Expense Report {$date}\n");
         
-        $mealExpenses = 0;
-        foreach ($expenses as $expense) {
-            $mealExpenses += $this->getMealExpenses($expense);
-        }
+        $mealExpenses = $this->getTotalMealExpenses($expenses);
         
         foreach ($expenses as $expense) {        
             $mealOverExpensesMarker = $this->getMealOverExpensesMarker($expense);
@@ -35,6 +32,15 @@ class ExpenseReport
         }
         print("Meal Expenses: " . $mealExpenses . "\n");
         print("Total Expenses: " . $this->getTotal($expenses) . "\n");
+    }
+
+    private function getTotalMealExpenses($expenses)
+    {
+        $mealExpenses = 0;
+        foreach ($expenses as $expense) {
+            $mealExpenses += $this->getMealExpenses($expense);
+        }
+        return $mealExpenses;
     }
 
     private function getTotal($expenses)
