@@ -28,13 +28,13 @@ class ExpenseReport
     function getReportData($expenses)
     {
         $expensesData = new ExpenseData($this->getTotalMealExpenses($expenses), $this->getTotal($expenses));
-        $this->print_report($expenses, $expensesData);
+        return $expensesData;
     }
-    function print_report($expenses, $expensesData) 
+    function print_report($expenses) 
     {
         $date = date("Y-m-d h:i:sa");
         print("Expense Report {$date}\n");
-                
+        $expensesData = $this->getReportData($expenses);
         foreach ($expenses as $expense) {        
             print($this->getExpenseName($expense->type) . "\t" . $expense->amount . "\t" . $this->getMealOverExpensesMarker($expense) . "\n");
         }
