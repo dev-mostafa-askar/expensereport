@@ -17,6 +17,11 @@ class Expense
     }
 }
 
+class ExpenseData 
+{
+    public function __construct(private $mealExpense, private $total) {}
+}
+
 class ExpenseReport 
 {
     function print_report($expenses) 
