@@ -29,17 +29,22 @@ class ExpenseReport
             $mealExpenses += $this->getMealExpenses($expense);
         }
         
-        $total = 0;
-        foreach ($expenses as $expense) {
-            $total += $expense->amount;
-        }
-
+        $total = $this->getTotal($expenses);
         foreach ($expenses as $expense) {        
             $mealOverExpensesMarker = $this->getMealOverExpensesMarker($expense);
             print($this->getExpenseName($expense->type) . "\t" . $expense->amount . "\t" . $mealOverExpensesMarker . "\n");
         }
         print("Meal Expenses: " . $mealExpenses . "\n");
         print("Total Expenses: " . $total . "\n");
+    }
+
+    private function getTotal($expenses)
+    {
+        $total = 0;
+        foreach ($expenses as $expense) {
+            $total += $expense->amount;
+        }
+        return $total;
     }
 
     private function getExpenseName($expenseType)
