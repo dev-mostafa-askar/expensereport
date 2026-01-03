@@ -30,7 +30,7 @@ class ExpenseReport
         $expensesData = new ExpenseData($this->getTotalMealExpenses($expenses), $this->getTotal($expenses));
         $this->print_report($expenses, $expensesData);
     }
-    function print_report($expenses) 
+    function print_report($expenses, $expensesData) 
     {
         $date = date("Y-m-d h:i:sa");
         print("Expense Report {$date}\n");
