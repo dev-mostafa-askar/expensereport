@@ -19,7 +19,7 @@ class Expense
 
 class ExpenseData 
 {
-    public function __construct(private $mealExpense, private $total) {}
+    public function __construct(public $mealExpense, public $total) {}
 }
 
 class ExpenseReport 
@@ -38,7 +38,7 @@ class ExpenseReport
         foreach ($expenses as $expense) {        
             print($this->getExpenseName($expense->type) . "\t" . $expense->amount . "\t" . $this->getMealOverExpensesMarker($expense) . "\n");
         }
-        print("Meal Expenses: " . $this->getTotalMealExpenses($expenses) . "\n");
+        print("Meal Expenses: " . $expensesData->mealExpense . "\n");
         print("Total Expenses: " . $this->getTotal($expenses) . "\n");
     }
 
