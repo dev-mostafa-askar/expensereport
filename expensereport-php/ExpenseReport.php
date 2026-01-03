@@ -59,9 +59,14 @@ class ExpenseReport
     }
     function print_report($expenses) 
     {
+        $expensesData = $this->getReportData($expenses);
+        $this->printReportInConsle($expensesData);
+    }
+
+    private function printReportInConsle($expensesData)
+    {
         $date = date("Y-m-d h:i:sa");
         print("Expense Report {$date}\n");
-        $expensesData = $this->getReportData($expenses);
         foreach ($expensesData->expensesData as $expense) {        
             print($expense->name . "\t" . $expense->amount . "\t" . $expense->marker . "\n");
         }
