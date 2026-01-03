@@ -6,7 +6,7 @@ require_once 'ExpensesData/ExpenseTransformer.php';
 
 class ExpenseReport 
 {
-    function print_report($expenses) 
+    function printReport($expenses) 
     {
         $expensesData = (new ExpenseTransformer())->transform($expenses);
         $this->printReportInConsle($expensesData);
