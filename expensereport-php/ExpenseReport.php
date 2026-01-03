@@ -37,11 +37,13 @@ class ExpenseReport
 
     function getReportData($expenses)
     {
-        $expensesData = new ExpensesData($this->getTotalMealExpenses($expenses), $this->getTotal($expenses));
         $expensesItems = [];
         $mealExpenses = 0;
+        $total = 0;
         foreach ($expenses as $expense) {
             $mealExpenses += $this->getMealExpenses($expense);
+            $total += $expense->amount;
+            
             $expensesItems [] = new ExpenseData(
                 $expense->type,
                 $expense->amount,
@@ -49,7 +51,7 @@ class ExpenseReport
                 $this->getMealOverExpensesMarker($expense)
             );
         }
-        return $expensesData;
+        return new ExpensesData($this->getTotalMealExpenses($expenses), $this->getTotal($expenses));
     }
     function print_report($expenses) 
     {
