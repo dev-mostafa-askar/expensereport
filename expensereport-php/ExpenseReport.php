@@ -53,6 +53,13 @@ class ExpenseReport
 
     private function getMealOverExpensesMarker($expense)
     {
-        $mealOverExpensesMarker = $expense->type == ExpenseType::DINNER && $expense->amount > 5000 || $expense->type == ExpenseType::BREAKFAST && $expense->amount > 1000 ? "X" : " ";
+        if($expense->type == ExpenseType::DINNER && $expense->amount > 5000){
+            return "X";
+        }
+
+        if($expense->type == ExpenseType::BREAKFAST && $expense->amount > 1000){
+            return "X";
+        }   
+        return " ";
     }
 }
