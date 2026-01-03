@@ -39,7 +39,9 @@ class ExpenseReport
     {
         $expensesData = new ExpensesData($this->getTotalMealExpenses($expenses), $this->getTotal($expenses));
         $expensesItems = [];
+        $mealExpenses = 0;
         foreach ($expenses as $expense) {
+            $mealExpenses += $this->getMealExpenses($expense);
             $expensesItems [] = new ExpenseData(
                 $expense->type,
                 $expense->amount,
