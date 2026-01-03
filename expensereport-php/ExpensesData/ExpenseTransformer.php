@@ -37,18 +37,18 @@ class ExpenseTransformer
 
     private function getMealExpenses($expense)
     {
-        if ($expense->type == ExpenseType::DINNER || $expense->type == ExpenseType::BREAKFAST) {
+        if ($expense->type == ExpenseTypeEnum::DINNER || $expense->type == ExpenseTypeEnum::BREAKFAST) {
             return $expense->amount;
         }
     }
 
     private function getMealOverExpensesMarker($expense)
     {
-        if($expense->type == ExpenseType::DINNER && $expense->amount > 5000){
+        if($expense->type == ExpenseTypeEnum::DINNER && $expense->amount > 5000){
             return "X";
         }
 
-        if($expense->type == ExpenseType::BREAKFAST && $expense->amount > 1000){
+        if($expense->type == ExpenseTypeEnum::BREAKFAST && $expense->amount > 1000){
             return "X";
         }   
         return " ";
