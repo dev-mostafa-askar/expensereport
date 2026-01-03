@@ -1,5 +1,10 @@
 <?php 
 
+require_once __DIR__ . '/ExpenseEntity.php';
+require_once __DIR__ . '/ExpenseData.php';
+require_once __DIR__ . '/ExpensesData.php';
+require_once __DIR__ . '/ExpenseTypeEnum.php';
+
 class ExpenseTransformer
 {
     public function transform($expenses)
