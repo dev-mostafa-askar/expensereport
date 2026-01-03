@@ -1,0 +1,21 @@
+{
+    "name": "expensereport/php",
+    "description": "Expense Report PHP Project",
+    "type": "project",
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ExpenseReport\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ExpenseReport\\Tests\\": "tests/"
+        }
+    }
+}
