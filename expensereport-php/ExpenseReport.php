@@ -12,14 +12,14 @@ class ExpenseReport
         $this->printReportInConsle($expensesData);
     }
 
-    private function printReportInConsle($expensesData)
+    private function printReportInConsle($expenses)
     {
         $date = date("Y-m-d h:i:sa");
         print("Expense Report {$date}\n");
-        foreach ($expensesData->expensesData as $expense) {        
+        foreach ($expenses->expensesData as $expense) {        
             print($expense->name . "\t" . $expense->amount . "\t" . $expense->marker . "\n");
         }
-        print("Meal Expenses: " . $expensesData->mealExpense . "\n");
-        print("Total Expenses: " . $expensesData->total . "\n");
+        print("Meal Expenses: " . $expenses->mealExpense . "\n");
+        print("Total Expenses: " . $expenses->total . "\n");
     }
 }
