@@ -21,7 +21,7 @@ class ExpenseReportTest extends TestCase
 
         $expensesReport = new ExpenseReport();
         ob_start();
-        $expensesReport->print_report($expenses);
+        $expensesReport->getReportData($expenses);
         $output = ob_get_clean();
         
         $outputLines = explode("\n", $output);

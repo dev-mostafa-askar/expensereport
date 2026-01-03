@@ -39,7 +39,7 @@ class ExpenseReport
             print($this->getExpenseName($expense->type) . "\t" . $expense->amount . "\t" . $this->getMealOverExpensesMarker($expense) . "\n");
         }
         print("Meal Expenses: " . $expensesData->mealExpense . "\n");
-        print("Total Expenses: " . $this->getTotal($expenses) . "\n");
+        print("Total Expenses: " . $expensesData->total . "\n");
     }
 
     private function getTotalMealExpenses($expenses)
