@@ -59,7 +59,7 @@ class ExpenseReport
     }
     function print_report($expenses) 
     {
-        $expensesData = $this->getReportData($expenses);
+        $expensesData = new ExpenseTransformer()->transform($expenses);
         $this->printReportInConsle($expensesData);
     }
 
