@@ -9,10 +9,10 @@ class ExpenseReport
     function printReport($expenses) 
     {
         $expensesData = (new ExpenseTransformer())->transform($expenses);
-        $this->printReportInConsle($expensesData);
+        $this->printReportInConsole($expensesData);
     }
 
-    private function printReportInConsle($expenses)
+    private function printReportInConsole($expenses)
     {
         $date = date("Y-m-d h:i:sa");
         print("Expense Report {$date}\n");
