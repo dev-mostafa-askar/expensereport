@@ -29,9 +29,9 @@ class ExpenseTransformer
     private function getExpenseName($expenseType)
     {
         switch ($expenseType) {
-            case ExpenseType::DINNER: return "Dinner";
-            case ExpenseType::BREAKFAST: return "Breakfast";
-            case ExpenseType::CAR_RENTAL: return "Car Rental"; ;
+            case ExpenseTypeEnum::DINNER: return "Dinner";
+            case ExpenseTypeEnum::BREAKFAST: return "Breakfast";
+            case ExpenseTypeEnum::CAR_RENTAL: return "Car Rental"; ;
         }
     }
 
