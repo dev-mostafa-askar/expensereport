@@ -19,7 +19,11 @@ class Expense
 
 class ExpensesData 
 {
-    public function __construct(public $mealExpense, public $total, public array $expensesData) {}
+    public function __construct (
+        public $mealExpense, 
+        public $total, 
+        public array $expensesData
+    ) {}
 }
 
 class ExpenseData 
