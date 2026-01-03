@@ -29,10 +29,9 @@ class ExpenseReport
             if ($expense->type == ExpenseType::DINNER || $expense->type == ExpenseType::BREAKFAST) {
                 $mealExpenses += $expense->amount;
             }
-            $expenseName = $this->getExpenseName($expense->type);
         
             $mealOverExpensesMarker = $expense->type == ExpenseType::DINNER && $expense->amount > 5000 || $expense->type == ExpenseType::BREAKFAST && $expense->amount > 1000 ? "X" : " ";
-            print($expenseName . "\t" . $expense->amount . "\t" . $mealOverExpensesMarker . "\n");
+            print($this->getExpenseName($expense->type) . "\t" . $expense->amount . "\t" . $mealOverExpensesMarker . "\n");
             $total += $expense->amount;
         }
         print("Meal Expenses: " . $mealExpenses . "\n");
